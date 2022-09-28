@@ -1,0 +1,20 @@
+micronaut:
+  application:
+    name: crudData
+datasources:
+  default:
+    dialect: MYSQL
+    driverClassName: com.mysql.cj.jdbc.Driver
+netty:
+  default:
+    allocator:
+      max-order: 3
+liquibase:
+  enabled: true
+  datasources:
+    default:
+      change-log: 'classpath:db/liquibase-changelog.xml'
+endpoints:
+  liquibase:
+    enabled: true
+    sensitive: false

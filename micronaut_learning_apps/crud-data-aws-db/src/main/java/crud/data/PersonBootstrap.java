@@ -18,8 +18,8 @@ public class PersonBootstrap implements ApplicationEventListener<ServerStartupEv
 
     @Override
     public void onApplicationEvent(ServerStartupEvent event) {
-        personService.save("Geddy", "Lee");
-        personService.save("Neil", "Peart");
-        personService.save("Alex", "Lifeson");
+//        personService.save("Geddy", "Lee");
+//        personService.save("Neil", "Peart");
+//        personService.save("Alex", "Lifeson");
     }
 }

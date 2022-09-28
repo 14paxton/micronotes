@@ -11,4 +11,6 @@ import java.util.List;
 public interface PersonRepository extends CrudRepository<Person, Long> {
     void update(@Id long id, String firstName, String lastName);
     Person save(String firstName, String lastName);
+
+    List<Person> find();
 }

@@ -4,6 +4,9 @@ import io.micronaut.core.annotation.Introspected;
 import io.micronaut.http.HttpResponse;
 import io.micronaut.http.annotation.*;
 
+import java.util.*;
+import java.util.stream.*;
+
 @Controller("/person")
 public class PersonController {
 
@@ -32,6 +35,15 @@ public class PersonController {
     @Get("/")
     public Iterable<Person> list() {
         return personRepository.findAll();
+    }
+
+    @Get("/record")
+    public List<PersonRecord> listRecords() {
+
+        return personRepository.find()
+                .stream()
+                .map(person -> new PersonRecord(person.getLastName(), person.getFirstName()))
+                .collect(Collectors.toList());
     }
 }
 

@@ -14,8 +14,8 @@
 -need to have aws env variables set too
 
 ```bash
-export AWS_ACCESS_KEY_ID=AKIASC5Z6WSKZPKDPXA2;
-export AWS_SECRET_ACCESS_KEY=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
+export AWS_ACCESS_KEY_ID=AKIASC5Z6WSK3YUJHKLC;
+export AWS_SECRET_ACCESS_KEY=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
 ```
 
 - hosts need to be set to work- use after setting up db instance
@@ -165,13 +165,17 @@ mysql -h $MYSQL_HOST -P 3306 -u admin -p
 #### add an object
 
 ```bash
-curl -X "POST" "http://localhost:8080/genres" \
+curl -X "POST" "http://localhost:8082/person/" \
      -H 'Content-Type: application/json; charset=utf-8' \
-     -d $'{ "name": "music" }'
+     -d $'{ "firstName": "itchy", "lastName": "peterson" }'
 ```
 
 #### list
 
 ````bash
-curl http://localhost:8080/genres/list
+curl http://localhost:8082/person/
+````
+
+````bash
+curl http://localhost:8082/person/record
 ````
