@@ -38,9 +38,9 @@ java {
     targetCompatibility = JavaVersion.toVersion("17")
 }
 
-//run {
-//    systemProperty('micronaut.environments','dev')
-//}
+run {
+    systemProperty('micronaut.environments','dev')
+}
 
 graalvmNative.toolchainDetection = false
 micronaut {
