@@ -1,12 +1,33 @@
+## Feature test-resources documentation
+
+- [Micronaut Test Resources documentation](https://micronaut-projects.github.io/micronaut-test-resources/latest/guide/)
+
+
+## Feature jdbc-hikari documentation
+
+- [Micronaut Hikari JDBC Connection Pool documentation](https://micronaut-projects.github.io/micronaut-sql/latest/guide/index.html#jdbc)
+
+
+## Feature http-client documentation
+
+- [Micronaut HTTP Client documentation](https://docs.micronaut.io/latest/guide/index.html#httpClient)
+
+
+## Feature data-jdbc documentation
+
+- [Micronaut Data JDBC documentation](https://micronaut-projects.github.io/micronaut-data/latest/guide/index.html#jdbc)
+
+
+
 1) install mysql-client, aws cli, jq
 2) set aws access key and secret env variables
 3) create aws iam user, configure aws cli to use
 4) optional(create security groups)
 5) create mysql rds on aws
 6) make sure to have security group set to db (using vpc-00ea68da046480a6b )
-6) get db instance and save to MYSQL_HOST env variable
-7) create db user
-8) update env variables
+7) get db instance and save to MYSQL_HOST env variable
+8) create db user
+9) update env variables
 
 ## Install MySQL-client
 
