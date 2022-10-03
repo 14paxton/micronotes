@@ -20,3 +20,8 @@ endpoints:
   liquibase:
     enabled: true
     sensitive: false
+microstream:
+  storage:
+    main:
+      root-class: 'crud.data.microstream.PersonContainer'
+      storage-directory: 'build/person-storage'
