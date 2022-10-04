@@ -32,3 +32,11 @@ curl -i -d '{"name":"tulip"}' -H "Content-Type: application/json" -X POST http:/
 ```bash
 curl -i localhost:8082/microstream/person
 ```
+
+
+### Microstream gui
+> add to build.gradle
+>> developmentOnly("io.micronaut.microstream:micronaut-microstream-rest")
+
+>  and download client 
+>> https://docs.microstream.one/manual/storage/rest-interface/client-gui.html
