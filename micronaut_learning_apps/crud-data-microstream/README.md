@@ -1,17 +1,6 @@
 1) setup in aws-db readme
 
-## Start script
-```bash
-export AWS_ACCESS_KEY_ID=AKIASC5Z6WSK3YUJHKLC;
-export AWS_SECRET_ACCESS_KEY=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;
-export MYSQL_HOST=$(aws rds describe-db-instances --query 'DBInstances[?DBInstanceIdentifier==`crud-data-aws-db-create-micro-person`].Endpoint.Address' --output text);
-export JDBC_URL=jdbc:mysql://${MYSQL_HOST}:3306/micronaut;
-export JDBC_USER=admin;
-export JDBC_PASSWORD=secret99;
-export DATASOURCES_DEFAULT_URL=jdbc:mysql://${MYSQL_HOST}:3306/micronaut;
-export DATASOURCES_DEFAULT_USERNAME=admin;
-export DATASOURCES_DEFAULT_PASSWORD=secret99;
-```
+
 
 ## Testing
 
@@ -32,3 +21,14 @@ curl http://localhost:8082/person/
 ````bash
 curl http://localhost:8082/person/record
 ````
+
+#### create with microstream
+```bash
+curl -i -d '{"name":"tulip"}' -H "Content-Type: application/json" -X POST http://localhost:8082/microstream/person
+
+```
+
+#### list microstream
+```bash
+curl -i localhost:8082/microstream/person
+```

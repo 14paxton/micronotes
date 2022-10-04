@@ -28,13 +28,13 @@ class PersonMicroStreamController {
     @ExecuteOn(IO)
     @Post
     @Status(HttpStatus.CREATED)
-    Person create(@NonNull @NotNull @Valid @Body PersonCommand fruit) {
-        return personRepo.create(fruit);
+    Person create(@NonNull @NotNull @Valid @Body PersonCommand person) {
+        return personRepo.create(person);
     }
 
     @Put
-    Person update(@NonNull @NotNull @Valid @Body PersonCommand fruit) {
-        return personRepo.update(fruit);
+    Person update(@NonNull @NotNull @Valid @Body PersonCommand person) {
+        return personRepo.update(person);
     }
 
     @Get("/{name}")
@@ -45,7 +45,7 @@ class PersonMicroStreamController {
     @ExecuteOn(IO)
     @Delete
     @Status(HttpStatus.NO_CONTENT)
-    void delete(@NonNull @Valid @Body PersonCommand fruit) {
-        personRepo.delete(fruit);
+    void delete(@NonNull @Valid @Body PersonCommand person) {
+        personRepo.delete(person);
     }
 }
