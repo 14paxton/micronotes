@@ -5,6 +5,7 @@ import io.micronaut.core.annotation.*;
 import io.micronaut.microstream.*;
 import io.micronaut.microstream.annotations.*;
 import jakarta.inject.*;
+import one.microstream.storage.types.*;
 
 import javax.validation.*;
 import javax.validation.constraints.*;
@@ -14,9 +15,13 @@ import java.util.*;
 public class PersonRepositoryImpl implements PersonMicroStreamRepo {
 
     private final RootProvider<PersonContainer> rootProvider;
+    private final StorageManager storageManager;
 
-    PersonRepositoryImpl(RootProvider<PersonContainer> rootProvider) {
+
+    PersonRepositoryImpl(RootProvider<PersonContainer> rootProvider, StorageManager storageManager) {
+
         this.rootProvider = rootProvider;
+        this.storageManager = storageManager;
     }
 
     @Override
