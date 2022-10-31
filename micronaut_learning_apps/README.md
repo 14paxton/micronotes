@@ -1,7 +1,8 @@
 
 ```bash
-export AWS_ACCESS_KEY_ID=AKIASC5Z6WSK4I6MHICM;
-export AWS_SECRET_ACCESS_KEY=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;
+export AWS_ACCESS_KEY_ID=AKIASC5Z6WSK4JAMKQ6S;
+export AWS_SECRET_ACCESS_KEY=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;
+;
 ```
 
 - hosts need to be set to work- use after setting up db instance
@@ -36,8 +37,8 @@ export DATASOURCES_DEFAULT_PASSWORD=secret99
 
 ## Start script to use amazon db
 ```bash
-export AWS_ACCESS_KEY_ID=AKIASC5Z6WSK4I6MHICM;
-export AWS_SECRET_ACCESS_KEY=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;
+export AWS_ACCESS_KEY_ID=AKIASC5Z6WSK4JAMKQ6S;
+export AWS_SECRET_ACCESS_KEY=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;
 export MYSQL_HOST=$(aws rds describe-db-instances --query 'DBInstances[?DBInstanceIdentifier==`crud-data-aws-db-create-micro-person`].Endpoint.Address' --output text);
 export JDBC_URL=jdbc:mysql://${MYSQL_HOST}:3306/micronaut;
 export JDBC_USER=admin;
