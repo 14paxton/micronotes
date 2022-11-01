@@ -6,7 +6,7 @@
 
 #### create with microstream
 ```bash
-curl -i -d '{"name":"sonray"}' -H "Content-Type: application/json" -X POST http://localhost:8082/microstream/person
+curl -i -d '{"name":"xx69"}' -H "Content-Type: application/json" -X POST http://localhost:8082/microstream/person
 
 ```
 

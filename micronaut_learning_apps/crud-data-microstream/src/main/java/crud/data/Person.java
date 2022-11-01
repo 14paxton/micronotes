@@ -1,11 +1,9 @@
 package crud.data;
 
-import io.micronaut.data.annotation.Version;
-import io.micronaut.data.annotation.GeneratedValue;
-import io.micronaut.data.annotation.Id;
-import io.micronaut.data.annotation.MappedEntity;
+import io.micronaut.data.annotation.*;
+import io.micronaut.serde.annotation.*;
 
-@MappedEntity
+@Serdeable
 public class Person {
 
     @Id

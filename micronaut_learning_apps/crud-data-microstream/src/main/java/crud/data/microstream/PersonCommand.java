@@ -1,12 +1,11 @@
 package crud.data.microstream;
 
-import io.micronaut.core.annotation.Introspected;
-import io.micronaut.core.annotation.NonNull;
-import io.micronaut.core.annotation.Nullable;
+import io.micronaut.core.annotation.*;
+import io.micronaut.serde.annotation.*;
 
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.*;
 
-@Introspected
+@Serdeable
 public class PersonCommand {
 
     @NonNull

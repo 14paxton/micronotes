@@ -27,6 +27,7 @@ public class PersonRepositoryImpl implements PersonMicroStreamRepo {
     @Override
     @NonNull
     public Collection<Person> list() {
+
         return rootProvider.root().getPeople().values();
     }
 

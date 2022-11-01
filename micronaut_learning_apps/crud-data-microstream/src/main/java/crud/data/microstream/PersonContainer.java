@@ -6,7 +6,7 @@ import io.micronaut.core.annotation.*;
 import java.util.*;
 import java.util.concurrent.*;
 
-@Introspected
+@ReflectiveAccess
 public class PersonContainer {
     @NonNull
     private final Map<String, Person> people = new ConcurrentHashMap<>();

@@ -7,4 +7,4 @@ microstream:
   storage:
     main:
       root-class: 'crud.data.microstream.PersonContainer'
-      storage-directory: 'build/person-storage'
+      storage-directory: 'PersonDB/person-storage'
