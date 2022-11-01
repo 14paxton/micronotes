@@ -43,7 +43,7 @@ export MYSQL_HOST=$(aws rds describe-db-instances --query 'DBInstances[?DBInstan
 export JDBC_URL=jdbc:mysql://${MYSQL_HOST}:3306/micronaut;
 export JDBC_USER=admin;
 export JDBC_PASSWORD=secret99;
-export DATASOURCES_DEFAULT_URL=jdbc:mysql://${MYSQL_HOST}:3306/micronaut;
+export DATASOURCES_DEFAULT_URL=jdbc:mysql://${MYSQL_HOST}:3306/micro_person;
 export DATASOURCES_DEFAULT_USERNAME=admin;
 export DATASOURCES_DEFAULT_PASSWORD=secret99;
 ```
