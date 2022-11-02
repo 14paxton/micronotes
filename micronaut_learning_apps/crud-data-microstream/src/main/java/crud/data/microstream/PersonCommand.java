@@ -12,13 +12,14 @@ public class PersonCommand {
     @NotBlank
     private final String firstName;
 
-    @Nullable // <3>
+    @Nullable
     private final String lastName;
 
-    public PersonCommand(@NonNull String name) {
-        this(name, null);
+    public PersonCommand(@NonNull String firstName) {
+        this(firstName, null);
     }
 
+    @Creator
     public PersonCommand(@NonNull String firstName,
                          @Nullable String lastName) {
         this.firstName = firstName;
@@ -26,15 +27,11 @@ public class PersonCommand {
     }
 
     @NonNull
-    public String getName() {
-        return firstName + ' ' + lastName;
-    }
-
-    @NonNull
     public String getFirstName() {
         return firstName;
     }
 
+    @Nullable
     public String getLastName() {
         return lastName;
     }

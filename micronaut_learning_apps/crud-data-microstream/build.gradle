@@ -1,7 +1,7 @@
 plugins {
     id("groovy")
     id("com.github.johnrengelman.shadow") version "7.1.2"
-    id("io.micronaut.application") version "3.6.0"
+    id("io.micronaut.application") version "3.6.3"
     id("io.micronaut.test-resources") version "3.6.0"
     id 'org.graalvm.buildtools.native' version '0.9.13'
 
@@ -18,19 +18,16 @@ repositories {
 
 dependencies {
     annotationProcessor("io.micronaut:micronaut-graal")
-    annotationProcessor("io.micronaut.data:micronaut-data-processor")
     annotationProcessor("io.micronaut:micronaut-http-validation")
     annotationProcessor("io.micronaut.microstream:micronaut-microstream-annotations")
-    implementation("io.micronaut.microstream:micronaut-microstream-annotations")
-    implementation("io.micronaut.microstream:micronaut-microstream")
+    annotationProcessor("io.micronaut.serde:micronaut-serde-processor")
     implementation("io.micronaut:micronaut-http-client")
-    implementation("io.micronaut:micronaut-jackson-databind")
+    implementation("io.micronaut.microstream:micronaut-microstream")
+    implementation("io.micronaut.microstream:micronaut-microstream-annotations")
+    implementation("io.micronaut.serde:micronaut-serde-jackson")
     implementation("jakarta.annotation:jakarta.annotation-api")
     runtimeOnly("ch.qos.logback:logback-classic")
     implementation("io.micronaut:micronaut-validation")
-    annotationProcessor("io.micronaut.data:micronaut-data-processor")
-    implementation("io.micronaut.data:micronaut-data-jdbc")
-    implementation("io.micronaut.serde:micronaut-serde-jackson")
     compileOnly("org.graalvm.nativeimage:svm")
 
 }

@@ -42,18 +42,19 @@ public class PersonRepositoryImpl implements PersonMicroStreamRepo {
     }
 
     @StoreParams("people")
-    protected Person performCreate(Map<String, Person> people, PersonCommand cmd) {
-        Person newPerson = new Person(cmd.getFirstName(), cmd.getLastName());
-        people.put(cmd.getFirstName(), newPerson);
+    protected Person performCreate(Map<String, Person> people, PersonCommand person) {
+        String id = UUID.randomUUID().toString();
+        Person newPerson = new Person(id, person.getFirstName(), person.getLastName());
+        people.put(person.getFirstName(), newPerson);
         return newPerson;
     }
 
     @Nullable
-    public Person update(@NonNull @NotNull @Valid PersonCommand cmd) {
+    public Person update(@NonNull @NotNull @Valid PersonCommand person) {
         Map<String, Person> people = rootProvider.root().getPeople();
-        Person foundPerson = people.get(cmd.getFirstName());
+        Person foundPerson = people.get(person.getFirstName());
         if (foundPerson != null) {
-            return performUpdate(foundPerson, cmd);
+            return performUpdate(foundPerson, person);
         }
         return null;
     }
@@ -62,6 +63,7 @@ public class PersonRepositoryImpl implements PersonMicroStreamRepo {
     protected Person performUpdate(@NonNull Person foundPerson, @NonNull PersonCommand personCommand) {
         foundPerson.setFirstName(personCommand.getFirstName());
         foundPerson.setLastName(personCommand.getLastName());
+        foundPerson.setVersion(foundPerson.getVersion() + 1);
         return foundPerson;
     }
 
@@ -72,8 +74,8 @@ public class PersonRepositoryImpl implements PersonMicroStreamRepo {
     }
 
     @Override
-    public void delete(@NonNull @NotNull @Valid PersonCommand cmd) {
-        performDelete(cmd);
+    public void delete(@NonNull @NotNull @Valid PersonCommand person) {
+        performDelete(person);
     }
 
     @StoreReturn
