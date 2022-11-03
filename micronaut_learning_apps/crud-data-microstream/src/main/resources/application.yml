@@ -1,8 +1,10 @@
 micronaut:
+  server:
+    port: 8082
   application:
     name: microstream
 microstream:
   storage:
     main:
       root-class: 'crud.data.microstream.PersonContainer'
-      storage-directory: 'build/test/person-storage'
+      storage-directory: 'build/person-storage'
