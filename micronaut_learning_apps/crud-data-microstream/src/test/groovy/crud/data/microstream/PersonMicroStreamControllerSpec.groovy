@@ -58,7 +58,6 @@ class PersonMicroStreamControllerSpec extends MicroStreamBaseSpec {
         when:
         embeddedServer.close()
         embeddedServer = ApplicationContext.run(EmbeddedServer, properties)
-        personClient = embeddedServer.getApplicationContext().getBean(PersonClient)
 
         then:
         2 == numberOfPeople(personClient)
