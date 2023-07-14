@@ -1,3 +1,0 @@
-[engine:spock]/[spec:crud.data.PersonControllerSpec]/[feature:$spock_feature_0_0]
-[engine:spock]/[spec:crud.data.PersonControllerSpec]/[feature:$spock_feature_0_1]
-[engine:spock]/[spec:crud.data.PersonControllerSpec]/[feature:$spock_feature_0_2]
