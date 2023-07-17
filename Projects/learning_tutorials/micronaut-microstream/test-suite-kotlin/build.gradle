@@ -1,0 +1,38 @@
+plugins {
+    id "org.jetbrains.kotlin.jvm" version "1.7.20"
+    id("org.jetbrains.kotlin.kapt") version "1.7.20"
+    id("io.micronaut.internal.build.microstream-testsuite")
+}
+
+dependencies {
+    kaptTest(platform("io.micronaut:micronaut-bom:$micronautVersion"))
+    kaptTest (project(":microstream-annotations"))
+    kaptTest (mn.micronaut.serde.processor)
+
+    testImplementation(platform("io.micronaut:micronaut-bom:$micronautVersion"))
+    testImplementation(project(":microstream-annotations"))
+
+    testImplementation(mn.micronaut.validation)
+    testImplementation(mn.micronaut.serde.jackson)
+
+    testImplementation(libs.jupiter.api)
+    testImplementation(mn.micronaut.test.junit5)
+    testRuntimeOnly(libs.junit.jupiter.engine)
+    testRuntimeOnly(libs.logback.classic)
+    testRuntimeOnly(mn.snakeyaml)
+    testImplementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.20"
+    kaptTest(mn.micronaut.inject.java)
+
+    testImplementation(mn.micronaut.http.server.netty)
+    testImplementation(mn.micronaut.http.client)
+    testImplementation project(":microstream")
+    testImplementation(libs.jupiter.jupiter.params)
+    testImplementation project(":microstream-cache")
+}
+
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = '17'
+        javaParameters = true
+    }
+}

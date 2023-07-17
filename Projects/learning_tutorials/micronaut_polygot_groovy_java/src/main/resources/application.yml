@@ -1,0 +1,24 @@
+micronaut:
+  server:
+    port: 8082
+  application:
+    name: micronautConfiguration
+netty:
+  default:
+    allocator:
+      max-order: 3
+team:
+  name: 'Steelers'
+  color: 'Black'
+  player-names: ['Mason Rudolph', 'James Connor']
+  team-admin:
+    manager: 'Nirav Assar'
+    coach: 'Mike Tomlin'
+    president: 'Dan Rooney'
+stadium:
+  coors:
+    city: 'Denver'
+    size: 50000
+  pnc:
+    city: 'Pittsburgh'
+    size: 35000

@@ -1,0 +1,32 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}
+
+plugins {
+    id 'io.micronaut.build.shared.settings' version '6.0.0'
+}
+
+rootProject.name = 'microstream-parent'
+
+include 'microstream-bom'
+include 'microstream'
+include 'microstream-annotations'
+include 'microstream-rest'
+include 'microstream-cache'
+
+include 'test-suite'
+include 'test-suite-groovy'
+include 'test-suite-kotlin'
+
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+        maven { url "https://s01.oss.sonatype.org/content/repositories/snapshots/" }
+    }
+}
+micronautBuild {
+    importMicronautCatalog()
+}
