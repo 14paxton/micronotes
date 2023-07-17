@@ -1,0 +1,20 @@
+The following example creates a https://docs.microstream.one/manual/storage/root-instances.html[Root Instance] to store ``Customer``s:
+
+snippet::io.micronaut.microstream.docs.Data[]
+
+And `Customer` is defined as:
+
+snippet::io.micronaut.microstream.docs.Customer[]
+
+<1> The type is annotated with https://micronaut-projects.github.io/micronaut-serialization/snapshot/api/io/micronaut/serde/annotation/Serdeable.html[@Serdeable] to enable serialization/deserialization
+
+You specify the Root class via configuration:
+
+[source,yaml]
+.src/main/resources/application.yml
+----
+include::test-suite/src/test/resources/application-data.yml[]
+----
+
+<1> Specify a name qualifier for the MicroStream instance
+<2> Specify the class of the entity graph's root.

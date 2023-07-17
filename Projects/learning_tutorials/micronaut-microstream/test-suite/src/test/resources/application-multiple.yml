@@ -1,0 +1,13 @@
+microstream:
+  storage:
+    orange: # <1>
+      root-class: 'io.micronaut.microstream.docs.OneData' # <2>
+      storage-directory: build/microstream${random.shortuuid}
+      channel-count: 4
+    blue: # <2>
+      root-class: 'io.micronaut.microstream.docs.AnotherData' # <2>
+      storage-directory: build/microstream${random.shortuuid}
+      channel-count: 4
+      channel-directory-prefix: 'channel_'
+      data-file-prefix: 'channel_'
+      data-file-suffix: '.dat'

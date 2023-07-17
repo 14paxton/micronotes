@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: com.ssi
+testFramework: spock
+sourceLanguage: java
+buildTool: gradle
+features: [annotation-api, app-name, graalvm, gradle, http-client, jackson-databind, java, java-application, logback, micronaut-build, microstream, microstream-rest, netty-server, readme, security-annotations, security-jwt, shade, spock, yaml]

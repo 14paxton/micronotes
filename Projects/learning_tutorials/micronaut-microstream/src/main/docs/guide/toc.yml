@@ -1,0 +1,24 @@
+introduction:
+  title: Introduction
+releaseHistory: Release History
+dependency: Dependency
+configuration: Configuration
+rootInstance: Root Instance
+annotations: Annotations
+storage:
+  title: Storage
+  storageWithStorageManager: StorageManager
+  storageWithStore: Working with Annotations
+cache:
+  title: Cache
+  cacheConfiguration: Cache Configuration
+  cacheStorage: Cache Storage
+microstreamMetrics: Metrics
+storageHealth: Health
+rest:
+  title: REST API
+  restSetup: Enabling the REST API
+  restConfiguration: Configuration options
+  restGui: GUI
+repository: Repository
+

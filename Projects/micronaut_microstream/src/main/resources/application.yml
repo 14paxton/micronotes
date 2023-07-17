@@ -1,0 +1,11 @@
+micronaut:
+  router:
+    versioning:
+      enabled: true
+  application:
+    name: selfserviceintegration
+microstream:
+  storage:
+    main:
+      root-class: 'com.ssi.integration.IntegrationContainer'
+      storage-directory: 'build/integration-storage'
