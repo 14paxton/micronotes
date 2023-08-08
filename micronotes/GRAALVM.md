@@ -1,3 +1,34 @@
+---
+title:        GRAALVM
+permalink:    micronotes/GRAALVM
+category:     micronotes
+parent:       micronotes
+layout:       default
+has_children: false
+share:        true
+shortRepo:
+  - micronotes
+  - default
+---
+
+
+<br/>
+
+<details markdown="block">
+<summary>
+Table of contents
+</summary>
+{: .text-delta }
+1. TOC
+{:toc}
+</details>
+
+<br/>
+
+***
+
+<br/>
+
 # Micronaut
 
 ## Reflective Access
@@ -71,7 +102,8 @@ Args = --report-unsupported-elements-at-runtime
 
 ## add tool chain to gradle
 
-You can already build a native executable by running ./gradlew nativeCompile or run it directly by invoking ./gradlew nativeRun. However, at this stage, running the native executable will fail because
+You can already build a native executable by running ./gradlew nativeCompile or run it directly by invoking ./gradlew nativeRun.
+However, at this stage, running the native executable will fail because
 this application requires additional metadata: you need to provide it with a list of resources to load.
 
 Instruct the plugin to automatically detect resources to be included in the native executable. Add this to your build.gradle file:
@@ -85,8 +117,11 @@ graalvmNative {
 }
 ```
 
-Another thing to note here, the plugin may not be able to properly detect the GraalVM installation, because of limitations in Gradle. By default, the plugin selects a Java 11 GraalVM Community
-Edition. If you want to use GraalVM Enterprise, or a particular version of GraalVM and Java, you need to explicitly tell in plugin’s configuration. For example:
+Another thing to note here, the plugin may not be able to properly detect the GraalVM installation, because of limitations in Gradle.
+By default, the plugin selects a Java 11 GraalVM Community
+Edition.
+If you want to use GraalVM Enterprise, or a particular version of GraalVM and Java, you need to explicitly tell in plugin’s configuration.
+For example:
 
 ```groovy
 graalvmNative {
@@ -155,4 +190,3 @@ The workaround to this is to disable toolchain detection with this command
 - [GraalVM Docs : Reflection](https://www.graalvm.org/22.2/reference-manual/native-image/metadata/)
 - [reflect-config.json Graal SourceCode](https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/Reflection.md)
 - [Micronaut graalvm Tests Source Code](https://github.com/micronaut-graal-tests/micronaut-liquibase-graal/tree/2.3.x_h2)
-

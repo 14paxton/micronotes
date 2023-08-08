@@ -1,16 +1,48 @@
+---
+title:        DataBaseStuff
+permalink:    micronotes/DataBaseStuff
+category:     micronotes
+parent:       micronotes
+layout:       default
+has_children: false
+share:        true
+shortRepo:
+  - micronotes
+  - default
+---
+
+
+<br/>
+
+<details markdown="block">
+<summary>
+Table of contents
+</summary>
+{: .text-delta }
+1. TOC
+{:toc}
+</details>
+
+<br/>
+
+***
+
+<br/>
+
 # In Memory
+
 ```yml
 micronaut:
   application:
     name: backend
 datasources:
   default:
-    url: jdbc:h2:mem:devDb;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
-    username: sa
-    password: ''
+    url:             jdbc:h2:mem:devDb;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+    username:        sa
+    password:        ''
     driverClassName: org.h2.Driver
     schema-generate: CREATE_DROP
-    dialect: H2
+    dialect:         H2
 netty:
   default:
     allocator:
@@ -18,7 +50,9 @@ netty:
 ```
 
 # [MYSQL](https://micronaut-projects.github.io/micronaut-sql/latest/guide/index.html)
+
 ## example yml for connecting locally to mysql db
+
 ```yml
 micronaut:
   server:
@@ -27,13 +61,13 @@ micronaut:
     name: crudData
 datasources:
   default:
-    url: jdbc:mysql://localhost:3306/micro_person
-    username: root
-    password: pw123
+    url:             jdbc:mysql://localhost:3306/micro_person
+    username:        root
+    password:        pw123
     driverClassName: com.mysql.cj.jdbc.Driver
-    db-type: mysql
+    db-type:         mysql
     schema-generate: CREATE_DROP
-    dialect: MYSQL
+    dialect:         MYSQL
 netty:
   default:
     allocator:
@@ -50,7 +84,6 @@ netty:
 ```
 
 # [Hibernate](https://micronaut-projects.github.io/micronaut-sql/latest/guide/index.html#hibernate)
-
 
 ## [Reactive Hibernate](https://micronaut-projects.github.io/micronaut-data/latest/guide/#hibernateReactive)
 
@@ -74,7 +107,7 @@ micronaut:
 #    schema-generate: none
 jpa:
   default:
-    reactive: true
+    reactive:                       true
     compile-time-hibernate-proxies: true
     entity-scan:
       packages:
@@ -88,8 +121,8 @@ jpa:
         hbm2ddl:
           auto: update
         connection:
-          db-type: mysql
-          url: jdbc:mysql://localhost:3306/ssi
+          db-type:  mysql
+          url:      jdbc:mysql://localhost:3306/ssi
           username: root
           password: root
 netty:
@@ -99,22 +132,26 @@ netty:
 ```
 
 ## Hibernate schema generation
-###    The hibernate.hbm2ddl.auto configuration property is used to customize the Hibernate database schema generation process, and it can take the following values: 
 
--    none – This option disables the hbm2ddl.auto tool, so Hibernate is not going to take any action for managing the underlying database 
-     schema.
--    create-only – This option instructs Hibernate to generate the database schema from the entity model.
--    drop – This option instructs Hibernate to drop the database schema using the entity model as a reference for the DDL DROP statements.
--    create – This option instructs Hibernate to drop the database schema and recreate it afterward using the entity model as a reference.
--    create-drop – This option instructs Hibernate to drop the database schema and recreate it afterward using the entity model as a 
-     reference. 
--    validate – This option instructs Hibernate to validate the underlying database schema against the entity mappings.
--    update – This option instructs Hibernate to update the database schema by comparing the existing schema with the entity mappings and 
-               generate the appropriate schema migration scripts.
+### The hibernate.hbm2ddl.auto configuration property is used to customize the Hibernate database schema generation process, and it can take the following values:
+
+- none – This option disables the hbm2ddl.auto tool, so Hibernate is not going to take any action for managing the underlying database
+  schema.
+- create-only – This option instructs Hibernate to generate the database schema from the entity model.
+- drop – This option instructs Hibernate to drop the database schema using the entity model as a reference for the DDL DROP statements.
+- create – This option instructs Hibernate to drop the database schema and recreate it afterward using the entity model as a reference.
+- create-drop – This option instructs Hibernate to drop the database schema and recreate it afterward using the entity model as a
+  reference.
+- validate – This option instructs Hibernate to validate the underlying database schema against the entity mappings.
+- update – This option instructs Hibernate to update the database schema by comparing the existing schema with the entity mappings and
+  generate the appropriate schema migration scripts.
 
 # DB Migration
+
 ## [Liquibase](https://micronaut-projects.github.io/micronaut-liquibase/2.0.0.M1/guide/index.html#endpoint)
-### yml 
+
+### yml
+
 ```yml
 liquibase:
   enabled: true
@@ -123,10 +160,12 @@ liquibase:
       change-log: 'classpath:db/liquibase-changelog.xml'
 endpoints:
   liquibase:
-    enabled: true
+    enabled:   true
     sensitive: false
 ```
+
 ### changelog
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <databaseChangeLog
@@ -141,6 +180,7 @@ endpoints:
 ```
 
 #### db change file
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <databaseChangeLog

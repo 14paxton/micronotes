@@ -1,12 +1,48 @@
+---
+title:        cli_gradlew
+permalink:    micronotes/cli_gradlew
+category:     micronotes
+parent:       micronotes
+layout:       default
+has_children: false
+share:        true
+shortRepo:
+  - micronotes
+  - default
+---
+
+
+<br/>
+
+<details markdown="block">
+<summary>
+Table of contents
+</summary>
+{: .text-delta }
+1. TOC
+{:toc}
+</details>
+
+<br/>
+
+***
+
+<br/>
+
 # Gradle Micronaut
+
 ## CLI
+
 ### Debug
+
 ```bash
 ./gradlew runSingle --debug-jvm -PmainClass=Mai
 ```
+
 ----
 
 ## build.gradle
+
 ```groovy
 test {
     debugOptions {
@@ -20,7 +56,6 @@ test {
 
 > or ```run{ ... }```
 
-
 ### Remote Debugging in Gradle
 
 ```groovy
@@ -32,6 +67,7 @@ tasks.withType(JavaExec) {
 ```
 
 To know what's happening with the arguments read this about the arguments that you need to send to jvm to make remote debugging possible:
+
 ```
 https://www.eclipse.org/jetty/documentation/9.3.x/enable-remote-debugging.html
 ```
@@ -45,16 +81,16 @@ gradle -DDEBUG=true run
 ```
 
 - Now in console you will see something like this:
+
 ```bash
 Listening for transport debug_socket at address: 9099
 ```
 
 ##### Step2:
+
 configuration>Remote java application
 set these fields:
 
 	1. project
 	2. host (here its localhost)
 	3. port (in this example it will be 9099)
-
-
